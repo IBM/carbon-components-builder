@@ -138,7 +138,7 @@ export const componentInfo: ComponentInfo = {
 				@Input() ${nameStringToVariableString(json.codeContext?.name)}NotificationObj: any = {
 					type: "${json.kind ? json.kind : 'error'}",
 					title: "${json.title ? json.title : ''}",
-					message: "${json.caption ? json.caption : ''}",
+					message: "${json.subtitle ? json.subtitle : ''}",
 					lowContrast: ${!!json.lowContrast},
 					showClose: ${!!json.closeButtonHidden}
 				};`,
@@ -154,7 +154,7 @@ export const componentInfo: ComponentInfo = {
 				@Input() ${nameStringToVariableString(json.codeContext?.name)}NotificationObj: any = {
 					type: "${json.kind ? json.kind : 'error'}",
 					title: "${json.title ? json.title : ''}",
-					message: "${json.caption ? json.caption : ''}",
+					message: "${json.subtitle ? json.subtitle : ''}",
 					lowContrast: ${!!json.lowContrast},
 					showClose: ${!!json.closeButtonHidden}
 				};`,
@@ -173,7 +173,7 @@ export const componentInfo: ComponentInfo = {
 					kind="${json.kind ? json.kind : 'error'}"
 					hideCloseButton={${!!json.closeButtonHidden}}
 					lowContrast={${!!json.lowContrast}}
-					${json.subtitle ? `subtitle={<span>${json.subtitle}</span>}`: ''}
+					${json.subtitle ? `subtitle="${json.subtitle}"`: ''}
 					title="${json.title ? json.title : ''}"
 					onClose={(selectedItem) => handleInputChange({
 						target: {
@@ -189,7 +189,7 @@ export const componentInfo: ComponentInfo = {
 					kind="${json.kind ? json.kind : 'error'}"
 					hideCloseButton={${!!json.closeButtonHidden}}
 					lowContrast={${!!json.lowContrast}}
-					${json.subtitle ? `subtitle={<span>${json.subtitle}</span>}`: ''}
+					${json.subtitle ? `subtitle="${json.subtitle}"`: ''}
 					title="${json.title ? json.title : ''}"
 					onClose={(selectedItem) => handleInputChange({
 						target: {

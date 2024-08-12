@@ -183,7 +183,7 @@ export const componentInfo: ComponentInfo = {
 					hideCloseButton={${!!json.closeButtonHidden}}
 					lowContrast={${!!json.lowContrast}}
 					kind="${json.kind ? json.kind : 'error'}"
-					${json.subtitle ? `subtitle={<span>${json.subtitle}</span>}`: ''}
+					${json.subtitle ? `subtitle="${json.subtitle}"`: ''}
 					timeout={${0}}
 					title="${json.title ? json.title : ''}"
 					onClose={(selectedItem) => handleInputChange({
@@ -201,7 +201,7 @@ export const componentInfo: ComponentInfo = {
 					hideCloseButton={${!!json.closeButtonHidden}}
 					lowContrast={${!!json.lowContrast}}
 					kind="${json.kind ? json.kind : 'error'}"
-					${json.subtitle ? `subtitle={<span>${json.subtitle}</span>}`: ''}
+					${json.subtitle ? `subtitle="${json.subtitle}"`: ''}
 					timeout={${0}}
 					title="${json.title ? json.title : ''}"
 					onClose={(selectedItem) => handleInputChange({

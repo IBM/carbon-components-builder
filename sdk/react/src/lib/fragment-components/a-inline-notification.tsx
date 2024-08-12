@@ -126,7 +126,9 @@ export const componentInfo: ComponentInfo = {
 	name: 'Inline notification',
 	type: 'inline-notification',
 	defaultComponentObj: {
-		type: 'inline-notification'
+		type: 'inline-notification',
+		title: 'Information',
+		subtitle: 'Something important happened.'
 	},
 	image,
 	codeExport: {

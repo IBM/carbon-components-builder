@@ -13,6 +13,7 @@ import { UIContentSwitcher } from './components/ui-content-switcher';
 import { UIDropdown } from './components/ui-dropdown';
 import { UIExpandableTile } from './components/ui-expandable-tile';
 import { UIGrid } from './components/ui-grid';
+import { UIInlineNotification } from './components/ui-inline-notification';
 import { UILink } from './components/ui-link';
 import { UIInlineLoading } from './components/ui-inline-loading';
 import { UILoading } from './components/ui-loading';
@@ -243,6 +244,9 @@ export const renderComponents = (
 
 		case 'grid':
 			return <UIGrid key={state.id} state={state} sendSignal={sendSignal} setState={setState} setGlobalState={setGlobalState} />;
+
+		case 'inline-notification':
+			return <UIInlineNotification key={state.id} state={state} sendSignal={sendSignal} setState={setState} setGlobalState={setGlobalState} />;
 
 		case 'loading':
 			return <UILoading key={state.id} state={state} sendSignal={sendSignal} setState={setState} setGlobalState={setGlobalState} />;

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="74" height="37" viewBox="0 0 74 37">
+    <g id="Group_2" data-name="Group 2" transform="translate(-680 -380)">
+        <g id="Group_1" data-name="Group 1">
+        <rect id="background" width="74" height="37" transform="translate(680 380)" fill="#edf5ff"/>
+        <g id="boder" transform="translate(680 380)" fill="none" stroke="rgba(5,74,218,0.3)" stroke-width="1">
+            <rect width="74" height="37" stroke="none"/>
+            <rect x="0.5" y="0.5" width="73" height="36" fill="none"/>
+        </g>
+        <rect id="Border-Left" width="3" height="37" transform="translate(680 380)" fill="#0043ce"/>
+        <g id="Organization_Status_information--filled_16" data-name="Organization / Status / information--filled / 16" transform="translate(691.813 392.813)">
+            <path id="Fill" d="M5.688,11.375A5.653,5.653,0,0,1,0,5.688,5.652,5.652,0,0,1,5.688,0a5.653,5.653,0,0,1,5.688,5.688,5.653,5.653,0,0,1-5.688,5.688ZM4.063,8.125v.894h3.25V8.044H6.175V4.387H4.469v.975H5.2V8.125ZM5.688,2.031a.574.574,0,0,0-.65.569.643.643,0,0,0,.65.649.58.58,0,0,0,.65-.568A.644.644,0,0,0,5.688,2.031Z" fill="#0043ce"/>
+        </g>
+        <rect id="Field_color" data-name="Field color" width="37" height="17" transform="translate(707 390)" fill="#e8e8e8"/>
+        </g>
+    </g>
+</svg>

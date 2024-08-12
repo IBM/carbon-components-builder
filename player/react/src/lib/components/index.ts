@@ -11,6 +11,7 @@ import * as contentSwitcher from './ui-content-switcher';
 import * as dropdown from './ui-dropdown';
 import * as grid from './ui-grid';
 import * as numberinput from './ui-number-input';
+import * as inlineNotification from './ui-inline-notification';
 import * as radio from './ui-radio';
 import * as radioGroup from './ui-radio-group';
 import * as progressIndicator from './ui-progress-indicator';
@@ -52,6 +53,7 @@ export const allComponents = {
 	radioGroup,
 	link,
 	numberinput,
+	inlineNotification,
 	progressIndicator,
 	row,
 	searchinput,

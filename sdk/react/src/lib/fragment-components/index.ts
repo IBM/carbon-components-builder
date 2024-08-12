@@ -17,6 +17,7 @@ import * as radioGroup from './a-radio-group';
 import * as progressIndicator from './a-progress-indicator';
 import * as row from './a-row';
 import * as tag from './a-tag';
+import * as toastNotification from './a-toast-notification';
 import * as searchinput from './a-searchinput';
 import * as text from './a-text';
 import * as textarea from './a-text-area';
@@ -98,6 +99,7 @@ export const allComponents = {
 	row,
 	searchinput,
 	tag,
+	toastNotification,
 	text,
 	textarea,
 	textinput,

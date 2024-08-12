@@ -76,5 +76,5 @@ export const UIInlineNotification = ({ state, sendSignal }: {
 		lowContrast={state.lowContrast}
 		subtitle={state.subtitle}
 		title={state.title}
-		onClose={() => sendSignal(state.id, 'close')}/>;
+		onClose={() => sendSignal(state.id, 'close')} />;
 };

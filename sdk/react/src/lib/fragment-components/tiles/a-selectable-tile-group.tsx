@@ -207,23 +207,23 @@ export const componentInfo: ComponentInfo = {
 		react: {
 			latest: {
 				imports: [],
-				code: ({ json, fragments, jsonToTemplate, customComponentsCollections }) => {
+				code: ({ json, signals, slots, fragments, jsonToTemplate, customComponentsCollections }) => {
 					return `<div
 						role="group"
 						aria-label="Selectable tiles"
 						${reactClassNamesFromComponentObj(json)}>
-							${json.items.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+							${json.items.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 					</div>`;
 				}
 			},
 			v10: {
 				imports: [],
-				code: ({ json, fragments, jsonToTemplate, customComponentsCollections }) => {
+				code: ({ json, signals, slots, fragments, jsonToTemplate, customComponentsCollections }) => {
 					return `<div
 						role="group"
 						aria-label="Selectable tiles"
 						${reactClassNamesFromComponentObj(json)}>
-							${json.items.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+							${json.items.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 					</div>`;
 				}
 			}

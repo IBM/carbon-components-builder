@@ -174,23 +174,23 @@ export const componentInfo: ComponentInfo = {
 		react: {
 			latest: {
 				imports: ['AccordionItem'],
-				code: ({ json, fragments, jsonToTemplate, customComponentsCollections }) => {
+				code: ({ json, signals, slots, fragments, jsonToTemplate, customComponentsCollections }) => {
 					return `<AccordionItem
 						title="${json.title || ''}"
 						${json.disabled !== undefined ? `disabled={${json.disabled}}` : ''}
 						${reactClassNamesFromComponentObj(json)}>
-							${json.items.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+							${json.items.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 					</AccordionItem>`;
 				}
 			},
 			v10: {
 				imports: ['AccordionItem'],
-				code: ({ json, fragments, jsonToTemplate, customComponentsCollections }) => {
+				code: ({ json, signals, slots, fragments, jsonToTemplate, customComponentsCollections }) => {
 					return `<AccordionItem
 						title="${json.title || ''}"
 						${json.disabled !== undefined ? `disabled={${json.disabled}}` : ''}
 						${reactClassNamesFromComponentObj(json)}>
-							${json.items.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+							${json.items.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 					</AccordionItem>`;
 				}
 			}

@@ -90,19 +90,19 @@ export const componentInfo: ComponentInfo = {
 		react: {
 			latest: {
 				imports: [],
-				code: ({ json, fragments, jsonToTemplate, customComponentsCollections }) => {
+				code: ({ json, signals, slots, fragments, jsonToTemplate, customComponentsCollections }) => {
 					return `<TileBelowTheFoldContent
 						${reactClassNamesFromComponentObj(json)}>
-							${json.items.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+							${json.items.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 						</TileBelowTheFoldContent>`;
 				}
 			},
 			v10: {
 				imports: [],
-				code: ({ json, fragments, jsonToTemplate, customComponentsCollections }) => {
+				code: ({ json, signals, slots, fragments, jsonToTemplate, customComponentsCollections }) => {
 					return `<TileBelowTheFoldContent
 						${reactClassNamesFromComponentObj(json)}>
-							${json.items.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+							${json.items.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 						</TileBelowTheFoldContent>`;
 				}
 			}

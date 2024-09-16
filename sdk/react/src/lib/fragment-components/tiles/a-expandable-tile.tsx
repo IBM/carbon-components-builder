@@ -210,31 +210,31 @@ export const componentInfo: ComponentInfo = {
 		react: {
 			latest: {
 				imports: ['ExpandableTile', 'TileAboveTheFoldContent', 'TileBelowTheFoldContent'],
-				code: ({ json, jsonToTemplate, fragments, customComponentsCollections }) => {
+				code: ({ json, signals, slots, jsonToTemplate, fragments, customComponentsCollections }) => {
 					const { aboveFold, belowFold } = getFoldObjects(json);
 					return `<ExpandableTile
 						${json.light !== undefined && !!json.light ? `light={${json.light}}` : ''}
 						${json.expanded !== undefined && !!json.expanded ? `expanded={${json.expanded}}` : ''}
 						${reactClassNamesFromComponentObj(json)}>
 							<TileAboveTheFoldContent>
-								${aboveFold.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+								${aboveFold.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 							</TileAboveTheFoldContent>
-							${belowFold.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+							${belowFold.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 					</ExpandableTile>`;
 				}
 			},
 			v10: {
 				imports: ['ExpandableTile', 'TileAboveTheFoldContent', 'TileBelowTheFoldContent'],
-				code: ({ json, jsonToTemplate, fragments, customComponentsCollections }) => {
+				code: ({ json, signals, slots, jsonToTemplate, fragments, customComponentsCollections }) => {
 					const { aboveFold, belowFold } = getFoldObjects(json);
 					return `<ExpandableTile
 						${json.light !== undefined && !!json.light ? `light={${json.light}}` : ''}
 						${json.expanded !== undefined && !!json.expanded ? `expanded={${json.expanded}}` : ''}
 						${reactClassNamesFromComponentObj(json)}>
 							<TileAboveTheFoldContent>
-								${aboveFold.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+								${aboveFold.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 							</TileAboveTheFoldContent>
-							${belowFold.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+							${belowFold.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 					</ExpandableTile>`;
 				}
 			}

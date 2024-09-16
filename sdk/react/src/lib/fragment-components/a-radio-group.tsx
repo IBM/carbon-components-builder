@@ -209,7 +209,7 @@ export const componentInfo: ComponentInfo = {
 		react: {
 			latest: {
 				imports: ['RadioButtonGroup'],
-				code: ({ json, fragments, jsonToTemplate, customComponentsCollections }) => {
+				code: ({ json, signals, slots, fragments, jsonToTemplate, customComponentsCollections }) => {
 					return `<RadioButtonGroup
 						name="${json.codeContext?.name}"
 						legendText="${json.legend}"
@@ -223,13 +223,13 @@ export const componentInfo: ComponentInfo = {
 								name: "${json.codeContext?.name}"
 							}
 						})}>
-							${json.items.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+							${json.items.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 					</RadioButtonGroup>`;
 				}
 			},
 			v10: {
 				imports: ['RadioButtonGroup'],
-				code: ({ json, fragments, jsonToTemplate, customComponentsCollections }) => {
+				code: ({ json, signals, slots, fragments, jsonToTemplate, customComponentsCollections }) => {
 					return `<RadioButtonGroup
 						name="${json.codeContext?.name}"
 						legendText="${json.legend}"
@@ -243,7 +243,7 @@ export const componentInfo: ComponentInfo = {
 								name: "${json.codeContext?.name}"
 							}
 						})}>
-							${json.items.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+							${json.items.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 					</RadioButtonGroup>`;
 				}
 			}

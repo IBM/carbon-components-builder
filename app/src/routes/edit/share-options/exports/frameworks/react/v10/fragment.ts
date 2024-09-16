@@ -7,7 +7,7 @@ import {
 } from '@carbon/react/icons';
 import { getAllFragmentStyleClasses } from '@carbon-builder/player-react';
 import { hasFragmentStyleClasses } from '../../../../../../../utils/fragment-tools';
-import { format } from '../../utils';
+import { format, getReactActionsMap } from '../../utils';
 import {
 	formatOptions,
 	formatOptionsCss,
@@ -23,10 +23,12 @@ const generateTemplate = (json: any, fragments: any[], customComponentsCollectio
 	const carbonImportsString = carbonImports.reduce((string: string, curr: string) => (
 		string += `${curr}, `
 	), '');
+	const actions = getReactActionsMap(json);
+
 	return {
 		imports: `import { ${carbonImportsString} } from '@carbon/react';
 			${otherImportsFromComponentObj(json, fragments)}`,
-		template: jsonToTemplate(json, fragments, customComponentsCollections),
+		template: jsonToTemplate(json, actions.signals, actions.slots, fragments, customComponentsCollections),
 		additionalCode: getAdditionalCodeAsString(json, fragments)
 	};
 };

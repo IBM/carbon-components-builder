@@ -171,25 +171,25 @@ export const componentInfo: ComponentInfo = {
 		react: {
 			latest: {
 				imports: ['ClickableTile'],
-				code: ({ json, fragments, jsonToTemplate, customComponentsCollections }) => {
+				code: ({ json, signals, slots, fragments, jsonToTemplate, customComponentsCollections }) => {
 					return `<ClickableTile
 						${json.codeContext?.href !== undefined && json.codeContext?.href !== '' ? `href='${json.codeContext?.href}'` : ''}
 						${json.light !== undefined ? `light={${json.light}}` : ''}
 						${json.disabled !== undefined ? `disabled={${json.disabled}}` : ''}
 						${reactClassNamesFromComponentObj(json)}>
-							${json.items.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+							${json.items.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 					</ClickableTile>`;
 				}
 			},
 			v10: {
 				imports: ['ClickableTile'],
-				code: ({ json, fragments, jsonToTemplate, customComponentsCollections }) => {
+				code: ({ json, signals, slots, fragments, jsonToTemplate, customComponentsCollections }) => {
 					return `<ClickableTile
 						${json.codeContext?.href !== undefined && json.codeContext?.href !== '' ? `href='${json.codeContext?.href}'` : ''}
 						${json.light !== undefined ? `light={${json.light}}` : ''}
 						${json.disabled !== undefined ? `disabled={${json.disabled}}` : ''}
 						${reactClassNamesFromComponentObj(json)}>
-							${json.items.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+							${json.items.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 					</ClickableTile>`;
 				}
 			}

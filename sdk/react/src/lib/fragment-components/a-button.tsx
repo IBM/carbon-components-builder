@@ -10,6 +10,7 @@ import { AComponent, ComponentInfo } from './a-component';
 import image from './../assets/component-icons/button.svg';
 import {
 	angularClassNamesFromComponentObj,
+	getReactCodeForActions,
 	nameStringToVariableString,
 	reactClassNamesFromComponentObj
 } from '../helpers/tools';
@@ -159,20 +160,22 @@ export const componentInfo: ComponentInfo = {
 		react: {
 			latest: {
 				imports: ['Button'],
-				code: ({ json }) => {
+				code: ({ json, signals, slots }) => {
 					return `<Button
 						${json.kind && `kind="${json.kind}"`}
 						${json.size && `size="${json.size}"`}
-						${reactClassNamesFromComponentObj(json)}>${json.text}</Button>`;
+						${reactClassNamesFromComponentObj(json)}
+						${getReactCodeForActions(signals, slots, json.codeContext?.name)}>${json.text}</Button>`;
 				}
 			},
 			v10: {
 				imports: ['Button'],
-				code: ({ json }) => {
+				code: ({ json, signals, slots }) => {
 					return `<Button
 						${json.kind && `kind="${json.kind}"`}
 						${json.size && `size="${json.size}"`}
-						${reactClassNamesFromComponentObj(json)}>${json.text}</Button>`;
+						${reactClassNamesFromComponentObj(json)}
+						${getReactCodeForActions(signals, slots, json.codeContext?.name)}>${json.text}</Button>`;
 				}
 			}
 		}

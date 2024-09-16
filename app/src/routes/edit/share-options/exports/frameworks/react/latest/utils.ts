@@ -66,19 +66,19 @@ export const jsonToCarbonImports = (json: any) => {
 	return imports;
 };
 
-export const jsonToTemplate = (json: any, fragments: any[], customComponentsCollections: any[]) => {
+export const jsonToTemplate = (json: any, signals: any, slots: any, fragments: any[], customComponentsCollections: any[]) => {
 	if (typeof json === 'string' || !json) {
 		return json;
 	}
 
 	for (const component of Object.values(allComponents)) {
 		if (json.type === component.componentInfo.type && !component.componentInfo.codeExport.react.latest.isNotDirectExport) {
-			return component.componentInfo.codeExport.react.latest.code({ json, jsonToTemplate, fragments, customComponentsCollections });
+			return component.componentInfo.codeExport.react.latest.code({ json, signals, slots, jsonToTemplate, fragments, customComponentsCollections });
 		}
 	}
 
 	if (json.items) {
-		return json.items.map((item: any) => jsonToTemplate(item, fragments, customComponentsCollections)).join('\n');
+		return json.items.map((item: any) => jsonToTemplate(item, signals, slots, fragments, customComponentsCollections)).join('\n');
 	}
 };
 

@@ -130,23 +130,23 @@ export const componentInfo: ComponentInfo = {
 		react: {
 			latest: {
 				imports: ['Accordion'],
-				code: ({ json, fragments, jsonToTemplate, customComponentsCollections }) => {
+				code: ({ json, signals, slots, fragments, jsonToTemplate, customComponentsCollections }) => {
 					return `<Accordion
 						${json.align !== undefined ? `align='${json.align}'` : ''}
 						${json.size !== undefined ? `size='${json.size}'` : ''}
 						${reactClassNamesFromComponentObj(json)}>
-							${json.items.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+							${json.items.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 					</Accordion>`;
 				}
 			},
 			v10: {
 				imports: ['Accordion'],
-				code: ({ json, fragments, jsonToTemplate, customComponentsCollections }) => {
+				code: ({ json, signals, slots, fragments, jsonToTemplate, customComponentsCollections }) => {
 					return `<Accordion
 						${json.align !== undefined ? `align='${json.align}'` : ''}
 						${json.size !== undefined ? `size='${json.size}'` : ''}
 						${reactClassNamesFromComponentObj(json)}>
-							${json.items.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+							${json.items.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 					</Accordion>`;
 				}
 			}

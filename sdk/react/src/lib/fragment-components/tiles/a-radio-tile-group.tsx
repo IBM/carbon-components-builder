@@ -242,7 +242,7 @@ export const componentInfo: ComponentInfo = {
 		react: {
 			latest: {
 				imports: ['TileGroup'],
-				code: ({ json, jsonToTemplate, fragments, customComponentsCollections }) => {
+				code: ({ json, signals, slots, jsonToTemplate, fragments, customComponentsCollections }) => {
 					return `<TileGroup
 						${json.legend !== undefined && json.legend !== '' ? `legend="${json.legend}"` : ''}
 						name="${json.codeContext?.name}"
@@ -254,13 +254,13 @@ export const componentInfo: ComponentInfo = {
 								value: radio
 							}
 						})}>
-							${json.items.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+							${json.items.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 					</TileGroup>`;
 				}
 			},
 			v10: {
 				imports: ['TileGroup'],
-				code: ({ json, jsonToTemplate, fragments, customComponentsCollections }) => {
+				code: ({ json, signals, slots, jsonToTemplate, fragments, customComponentsCollections }) => {
 					return `<TileGroup
 						${json.legend !== undefined && json.legend !== '' ? `legend="${json.legend}"` : ''}
 						name="${json.codeContext?.name}"
@@ -272,7 +272,7 @@ export const componentInfo: ComponentInfo = {
 								value: radio
 							}
 						})}>
-							${json.items.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+							${json.items.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 					</TileGroup>`;
 				}
 			}

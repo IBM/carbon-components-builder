@@ -83,7 +83,9 @@ export interface ComponentInfo {
 				isNotDirectExport?: boolean;
 				code: (props: {
 					json: any;
-					jsonToTemplate: (json: any, fragments: any[], customComponentsCollections: any[]) => string;
+					signals: any;
+					slots: any;
+					jsonToTemplate: (json: any, signals: any, slots: any, fragments: any[], customComponentsCollections: any[]) => string;
 					fragments: any[];
 					customComponentsCollections: any[];
 				}) => string;
@@ -95,7 +97,9 @@ export interface ComponentInfo {
 				isNotDirectExport?: boolean;
 				code: (props: {
 					json: any;
-					jsonToTemplate: (json: any, fragments: any[], customComponentsCollections: any[]) => string;
+					signals: any;
+					slots: any;
+					jsonToTemplate: (json: any, signals: any, slots: any, fragments: any[], customComponentsCollections: any[]) => string;
 					fragments: any[];
 					customComponentsCollections: any[];
 				}) => string;

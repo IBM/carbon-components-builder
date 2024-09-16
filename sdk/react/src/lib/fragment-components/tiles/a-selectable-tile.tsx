@@ -265,7 +265,7 @@ export const componentInfo: ComponentInfo = {
 		react: {
 			latest: {
 				imports: ['SelectableTile'],
-				code: ({ json, fragments, jsonToTemplate, customComponentsCollections }) => {
+				code: ({ json, signals, slots, fragments, jsonToTemplate, customComponentsCollections }) => {
 					const stateFunction = json.standalone ?
 						`() => {
 							handleInputChange({
@@ -294,7 +294,7 @@ export const componentInfo: ComponentInfo = {
 						${json.disabled !== undefined && !!json.disabled ? `disabled={${json.disabled}}` : ''}
 						${reactClassNamesFromComponentObj(json)}
 						onClick={${stateFunction}}>
-							${json.items.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+							${json.items.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 					</SelectableTile>`;
 				},
 				additionalCode: (json) => {
@@ -318,7 +318,7 @@ export const componentInfo: ComponentInfo = {
 			},
 			v10: {
 				imports: ['SelectableTile'],
-				code: ({ json, fragments, jsonToTemplate, customComponentsCollections }) => {
+				code: ({ json, signals, slots, fragments, jsonToTemplate, customComponentsCollections }) => {
 					const stateFunction = json.standalone ?
 						`() => {
 							handleInputChange({
@@ -347,7 +347,7 @@ export const componentInfo: ComponentInfo = {
 						${json.disabled !== undefined && !!json.disabled ? `disabled={${json.disabled}}` : ''}
 						${reactClassNamesFromComponentObj(json)}
 						onClick={${stateFunction}}>
-							${json.items.map((element: any) => jsonToTemplate(element, fragments, customComponentsCollections)).join('\n')}
+							${json.items.map((element: any) => jsonToTemplate(element, signals, slots, fragments, customComponentsCollections)).join('\n')}
 					</SelectableTile>`;
 				},
 				additionalCode: (json) => {

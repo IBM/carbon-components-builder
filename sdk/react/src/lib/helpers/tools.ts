@@ -632,3 +632,73 @@ export const slotsFromType = (type: string) => {
 	}
 	return [];
 };
+
+export const getReactCodeForActions = (signals: any, slots: any, codeContextName: string) => {
+	let codeForActions = '';
+	if (codeContextName) {
+		if (signals[codeContextName]) {
+			Object.keys(signals[codeContextName]).forEach(eventName => {
+				codeForActions +=
+				`${eventName}={() => {${getReactEventHandlerStatements(signals[codeContextName][eventName])}}}`;
+			});
+		}
+		if (slots[codeContextName]) {
+			slots[codeContextName].forEach((slot: string) => {
+				if (getPropertyName(slot)) {
+					codeForActions += `${getPropertyName(slot)}={state["${codeContextName}"]?.${getPropertyName(slot)}}`;
+				}
+			});
+		}
+	}
+	return codeForActions;
+};
+
+export const getReactEventHandlerStatements = (signalEventActions: any) => {
+	let setStateStatements = 'setState({...state,';
+	Object.keys(signalEventActions).forEach((destination: any, destinationIndex: number) => {
+		setStateStatements += `"${destination}": {
+			...state["${destination}"],`;
+		signalEventActions[destination].forEach((slot: string, propertyIndex: number) => {
+			const isLast = propertyIndex !== signalEventActions[destination].length - 1;
+			setStateStatements += `${getNewState(slot, destination)}${isLast ? ', ' : ''}`;
+		});
+		const isLast = destinationIndex === Object.keys(signalEventActions).length - 1;
+		setStateStatements += isLast ? '}' : '},';
+	});
+	setStateStatements += '})';
+	return setStateStatements;
+};
+
+export const getNewState = (slot: string, codeContextName: string) => {
+	switch (slot) {
+		case 'disable':
+			return 'disabled: true';
+		case 'enable':
+			return 'disabled: false';
+		case 'toggleDisabled':
+			return `disabled: !state["${codeContextName}"].disabled`;
+		case 'hide':
+			return `hidden: true`;
+		case 'show':
+			return `hidden: false`;
+		case 'toggleVisibility':
+			return `hidden: !state["${codeContextName}"].hidden`;
+		default:
+			return '';
+	}
+}
+
+export const getPropertyName = (slot: string) => {
+	switch (slot) {
+		case 'disable':
+		case 'enable':
+		case 'toggleDisabled':
+			return 'disabled';
+		case 'hide':
+		case 'show':
+		case 'toggleVisibility':
+			return 'hidden';
+		default:
+			return '';
+	}
+}

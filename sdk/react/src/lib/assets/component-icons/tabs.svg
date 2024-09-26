@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="105" height="40" viewBox="0 0 105 40">
+    <g id="Group_2" data-name="Group 2" transform="translate(-888 -375)">
+        <g id="Group_1" data-name="Group 1">
+        <g id="background" transform="translate(940 375)">
+            <rect id="Bounds" width="53" height="40" fill="none"/>
+            <rect id="bar" width="52" height="2" transform="translate(0 38)" fill="#e0e0e0"/>
+        </g>
+        <g id="tabs_default_item" data-name="tabs / default / item" transform="translate(888 375)">
+            <g id="background-2" data-name="background">
+            <rect id="Bounds-2" data-name="Bounds" width="53" height="40" fill="none"/>
+            <rect id="bar-2" data-name="bar" width="52" height="2" transform="translate(0 38)" fill="#0f62fe"/>
+            </g>
+            <rect id="text_minimum_width" data-name="text minimum width" width="20" height="18" transform="translate(16 12)" fill="none"/>
+            <text id="Tab" transform="translate(16 26)" fill="#161616" font-size="14" font-family="IBMPlexSans-SemiBold, IBM Plex Sans" font-weight="600"><tspan x="0" y="0">Tab</tspan></text>
+        </g>
+        </g>
+    </g>
+</svg>

@@ -17,6 +17,7 @@ import * as progressIndicator from './ui-progress-indicator';
 import * as row from './ui-row';
 import * as tag from './ui-tag';
 import * as searchinput from './ui-search-input';
+import * as tabs from './ui-tabs';
 import * as text from './ui-text';
 import * as textarea from './ui-text-area';
 import * as textinput from './ui-text-input';
@@ -56,6 +57,7 @@ export const allComponents = {
 	row,
 	searchinput,
 	tag,
+	tabs,
 	text,
 	textarea,
 	textinput,

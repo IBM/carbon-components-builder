@@ -35,6 +35,7 @@ import { UITile } from './components/ui-tile';
 import { UITileFold } from './components/ui-tile-fold';
 import { UIToggle } from './components/ui-toggle';
 import { kebabCase } from 'lodash';
+import { UITabs } from './components/ui-tabs';
 import { SendSignal } from './types';
 
 export const setItemInState = (item: any, state: any, setState: (state: any) => void) => {
@@ -313,6 +314,8 @@ export const renderComponents = (
 		case 'radio-tile-group':
 			return <UIRadioTileGroup key={state.id} state={state} sendSignal={sendSignal} setState={setState} setGlobalState={setGlobalState} />;
 
+		case 'tabs':
+			return <UITabs key={state.id} state={state} sendSignal={sendSignal} setState={setState} setGlobalState={setGlobalState} />;
 		default:
 			break;
 	}

@@ -25,6 +25,7 @@ import * as link from './a-link';
 import * as loading from './a-loading';
 import * as inlineLoading from './a-inline-loading';
 import * as overflowMenu from './a-overflow-menu';
+import * as tabs from './a-tabs';
 // Tiles
 import * as tile from './tiles/a-tile';
 import * as toggle from './a-toggle';
@@ -63,7 +64,7 @@ export { ATextInput, ATextInputSettingsUI, ATextInputCodeUI } from './a-text-inp
 export { AOverflowMenu, AOverflowMenuCodeUI, AOverflowMenuSettingsUI } from './a-overflow-menu';
 export { ARadio, ARadioSettingsUI, ARadioCodeUI } from './a-radio';
 export { ARadioGroup, ARadioGroupSettingsUI, ARadioGroupCodeUI } from './a-radio-group';
-
+export { ATabs, ATabsSettingsUI, ATabsCodeUI } from './a-tabs';
 // Tiles
 export { ATile, ATileCodeUI, ATileSettingsUI } from './tiles/a-tile';
 export { AToggle, AToggleSettingsUI, AToggleCodeUI } from './a-toggle';
@@ -76,6 +77,7 @@ export { ARadioTile, ARadioTileCodeUI, ARadioTileSettingsUI } from './tiles/a-ra
 export { ARadioTileGroup, ARadioTileGroupCodeUI, ARadioTileGroupSettingsUI } from './tiles/a-radio-tile-group';
 
 export const allComponents = {
+	tabs,
 	accordion,
 	accordionitem,
 	button,

@@ -9,6 +9,7 @@ import * as column from './a-column';
 import * as combobox from './a-combobox';
 import * as contentSwitcher from './a-content-switcher';
 import * as dropdown from './a-dropdown';
+import * as fileUploader from './a-file-uploader';
 import * as fragment from './a-fragment';
 import * as grid from './a-grid';
 import * as numberinput from './a-numberinput';
@@ -48,6 +49,7 @@ export { AContentSwitcher, AContentSwitcherSettingsUI, AContentSwitcherCodeUI } 
 export { ADropdown, ADropdownSettingsUI, ADropdownCodeUI } from './a-dropdown';
 export * from './a-component';
 export { AFragment, AFragmentSettingsUI, AFragmentCodeUI } from './a-fragment';
+export { AFileUploader, AFileUploaderSettingsUI, AFileUploaderCodeUI } from './a-file-uploader';
 export { AGrid, AGridCodeUI, AGridSettingsUI } from './a-grid';
 export { ALoading, ALoadingCodeUI, ALoadingSettingsUI } from './a-loading';
 export { ALink, ALinkSettingsUI, ALinkCodeUI } from './a-link';
@@ -86,6 +88,7 @@ export const allComponents = {
 	contentSwitcher,
 	column,
 	dropdown,
+	fileUploader,
 	fragment,
 	grid,
 	loading,

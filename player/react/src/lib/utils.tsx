@@ -12,6 +12,7 @@ import { UIComboBox } from './components/ui-combobox';
 import { UIContentSwitcher } from './components/ui-content-switcher';
 import { UIDropdown } from './components/ui-dropdown';
 import { UIExpandableTile } from './components/ui-expandable-tile';
+import { UIFileUploader } from './components/ui-file-uploader';
 import { UIGrid } from './components/ui-grid';
 import { UILink } from './components/ui-link';
 import { UIInlineLoading } from './components/ui-inline-loading';
@@ -240,6 +241,9 @@ export const renderComponents = (
 
 		case 'dropdown':
 			return <UIDropdown key={state.id} state={state} sendSignal={sendSignal} setState={setState} setGlobalState={setGlobalState} />;
+
+		case 'file-uploader':
+			return <UIFileUploader key={state.id} state={state} sendSignal={sendSignal} setState={setState} setGlobalState={setGlobalState} />;
 
 		case 'grid':
 			return <UIGrid key={state.id} state={state} sendSignal={sendSignal} setState={setState} setGlobalState={setGlobalState} />;
